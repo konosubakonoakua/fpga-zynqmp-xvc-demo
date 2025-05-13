@@ -1,0 +1,36 @@
+### vivado project
+.Xil
+proj/project/
+
+### petalinux
+# Ignore build directories
+petalinux/build/
+petalinux/images/
+petalinux/pre-built/
+petalinux/components/
+
+# Ignore temporary files
+*.jou
+*.log
+*.str
+*.cache/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.runs/
+*.gen/
+*.xpr
+*.data/
+*.srcs/
+*.tmp/
+*.zip
+*.mif
+
+# Ignore other temporary files
+*.bak
+*.swp
+*.~*
+*.debug
+
+# linter
+.hdl_checker/
