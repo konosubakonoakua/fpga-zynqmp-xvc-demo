@@ -9,7 +9,7 @@
 ### petalinux-config
 - `initrd` or `initramfs` (error: there's no '/dev' on rootfs)
   - set `petalinux-config -> Image packaging configuration -> ( petalinux-image-minimal ) INITRAMFS/INITRD`
-- custom rootfs on mmc :ok:
+- cu rootfs on mmc :ok:
   - https://rcn-ee.com/rootfs/eewiki/minfs/debian-13-base-arm64-2025-05-09.tar.xz
 - static IP address, e.g. `192.168.137.50`
 
@@ -155,8 +155,8 @@
 ### run
 - xvc kernel module
   ```bash
-  modprobe xvc-driver
-  insmod xilinx-xvc-driver # custom rootfs
+  modprobe xilinx-xvc-driver
+  # insmod xilinx-xvc-driver # custom rootfs
   ```
 - xvc server
   ```bash
