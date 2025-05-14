@@ -7,7 +7,8 @@
 - https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/644579329/Xilinx+Virtual+Cable
 
 ### petalinux-config
-- `initrd` or `initramfs`
+- `initrd` or `initramfs` (error: there's no '/dev' on rootfs)
+- ext rootfs on mmc :ok:
 - static IP address, e.g. `192.168.137.50`
 
 ### add xvc driver from github repo
@@ -153,8 +154,35 @@
 - xvc kernel module
   ```bash
   modprobe xvc-driver
+  insmod xilinx-xvc-driver # custom rootfs
   ```
 - xvc server
   ```bash
-  xvcServer &
+  xvc-server
   ```
+- log
+  ```log
+  root@impcas-blm-test:~# insmod /boot/xvc/xilinx_xvc_driver.ko
+  [  282.311725] xilinx_xvc_driver: loading out-of-tree module taints kernel.
+  [  282.318926]  XVC Starting...
+  [  282.322134]  XVC Created device xilinx_xvc_driver
+  root@impcas-blm-test:~# /boot/xvc/xvc-server
+  INFO: XVC driver character file: /dev/xilinx_xvc_driver
+  INFO: debug_bridge base address: 0xA0000000
+  INFO: debug_bridge size: 0x10000
+  INFO: debug_bridge device tree compatibility string: xlnx,xvc
+
+  INFO: To connect to this xvcServer instance, use url: TCP:impcas-blm-test:2542
+
+  connection accepted - fd 5
+  setting TCP_NODELAY to 1
+  ```
+- screenshot
+
+  <details>
+
+    ![connect](doc/hwm-connect.png)
+
+    ![debug_bridge](doc/debug_bridge.png)
+
+  </details>
