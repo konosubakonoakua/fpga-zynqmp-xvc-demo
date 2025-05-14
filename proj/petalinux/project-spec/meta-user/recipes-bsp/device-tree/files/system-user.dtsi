@@ -1,8 +1,8 @@
 /include/ "system-conf.dtsi"
 / {
   chosen {
-          bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw cpuidle.off=1"; // mmc ext4
-          // bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/ram0 rw cpuidle.off=1"; // initrd
+          // bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw cpuidle.off=1"; // mmc ext4
+           bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/ram0 rw cpuidle.off=1"; // initrd
           // bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused cpuidle.off=1"; // initramfs
           stdout-path = "serial0:115200n8";
   };
