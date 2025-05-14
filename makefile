@@ -8,7 +8,7 @@ PROJECT_NAME := project
 PROJECT_PATH := proj/$(PROJECT_NAME)
 PROJECT_FILE := $(PROJECT_PATH)/$(PROJECT_NAME).xpr
 
-PETALINUX_DIR := petalinux
+PETALINUX_DIR := proj/petalinux
 
 HW_DESCRIPTION := hw_handoff/
 BD_DESIGN_NAME := design_1
